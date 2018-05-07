@@ -43,7 +43,7 @@
       navigationBarTitleText: '待办事项'
     }
     data = {
-      todos : [new Todo("学习 TypeScript")]
+      todos : [{ content :"学习 TypeScript", done: false}]
       newTodoContent : "",
       newTodoError : ""
     }
@@ -63,15 +63,17 @@
         this.newTodoError = "待办事项内容不能为空"
         return
       }
-      const todo = new Todo(content)
+      this.addNewTodo(content)
+    }
+
+    addNewTodo(content:string){
+      const todo : Todo = {content: content, done: false}
       this.todos.push(todo)
       this.newTodoContent = ""
     }
 
     onNewTodo(e){
-      const todo = new Todo(e.detail.value)
-      this.todos.push(todo)
-      this.newTodoContent = ""
+      this.addNewTodo(e.detail.value)
     }
 
     markTodo(event){
