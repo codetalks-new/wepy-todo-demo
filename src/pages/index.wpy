@@ -67,6 +67,7 @@
     }
 
     addNewTodo(content:string){
+      //  如果采用 new Todo(content) ,则不会有响应。
       const todo : Todo = {content: content, done: false}
       this.todos.push(todo)
       this.newTodoContent = ""
@@ -79,7 +80,6 @@
     markTodo(event){
       const index = event.currentTarget.dataset.index
       this.todos[index].done = false
-      this.$apply();
     }
 
     markDone(event){
@@ -88,7 +88,6 @@
       console.log("current index :", index)
       this.todos[index].done = true
       console.log("current todo done?:", this.todos[index].done)
-      this.$apply();
     }
 
   }
