@@ -1,16 +1,16 @@
 var prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  wpyExt: '.wpy',
+  wpyExt: '.vue',
   eslint: false,
   cliLogs: true,
   compilers: {
     less: {
       compress: true
     },
-    /*sass: {
-      outputStyle: 'compressed'
-    },*/
+    // sass: {
+    //   outputStyle: 'compressed'
+    // },
     typescript:{
     },
     babel: {

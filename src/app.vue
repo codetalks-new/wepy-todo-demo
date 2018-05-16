@@ -7,7 +7,7 @@ import wepy from 'wepy'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/index',
     ],
     window: {
       backgroundTextStyle: 'light',
